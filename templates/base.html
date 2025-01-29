@@ -12,24 +12,29 @@
     <script src="/static/js/theme.js"></script>
     <!-- Top menu navigation container -->
     <nav class="nav-container">
-        <a href="/" class="nav-link" 
-        {{if eq .ActivePage "home"}} aria-current="page"{{end}}
-        hx-get="/" hx-target="body" hx-push-url="true">Home</a>
-     <a href="/about" class="nav-link" 
-        {{if eq .ActivePage "about"}} aria-current="page"{{end}}
-        hx-get="/about" hx-target="body" hx-push-url="true">About</a>
-     <a href="/projects" class="nav-link" 
-        {{if eq .ActivePage "projects"}} aria-current="page"{{end}}
-        hx-get="/projects" hx-target="body" hx-push-url="true">Projects</a>
-     <a href="/contact" class="nav-link" 
-        {{if eq .ActivePage "contact"}} aria-current="page"{{end}}
-        hx-get="/contact" hx-target="body" hx-push-url="true">Contact</a>
-    
+
+
+            <a href="/" class="nav-link" 
+               {{if eq .ActivePage "home"}} aria-current="page"{{end}}
+               hx-get="/" hx-target="body" hx-push-url="true">Home</a>
+            <a href="/about" class="nav-link" 
+               {{if eq .ActivePage "about"}} aria-current="page"{{end}}
+               hx-get="/about" hx-target="body" hx-push-url="true">About</a>
+            <a href="/projects" class="nav-link" 
+               {{if eq .ActivePage "projects"}} aria-current="page"{{end}}
+               hx-get="/projects" hx-target="body" hx-push-url="true">Projects</a>
+            <a href="/contact" class="nav-link" 
+               {{if eq .ActivePage "contact"}} aria-current="page"{{end}}
+               hx-get="/contact" hx-target="body" hx-push-url="true">Contact</a>
+
+        
         <div class="theme-toggle">
-            <button id="theme-toggle" aria-label="Toggle theme">
-                    🌓
-            </button>
+            <label class="theme-slider">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
         </div>
+
     </nav>
     
     <main>

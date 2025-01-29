@@ -1,31 +1,37 @@
-document.addEventListener('DOMContentLoaded', () => {
+// theme.js
+// Function to update the slider position
+function updateToggleSlider(theme) {
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.checked = theme === 'dark';
+}
+
+let currentThemeToggleListener = null;
+
+function initializeThemeToggle() {
+    // Remove previous listener if exists
+    if (currentThemeToggleListener) {
+        document.getElementById('theme-toggle')
+            .removeEventListener('click', currentThemeToggleListener);
+    }
+
     const themeToggle = document.getElementById('theme-toggle');
     const storedTheme = localStorage.getItem('theme') || 'light';
     
-    // Set initial theme
     document.documentElement.setAttribute('data-theme', storedTheme);
-    updateToggleEmoji(storedTheme);
+    updateToggleSlider(storedTheme);
 
-    themeToggle.addEventListener('click', () => {
+    // Store reference to new listener
+    currentThemeToggleListener = () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
-        updateToggleEmoji(newTheme);
-    });
+        updateToggleSlider(newTheme);
+    };
 
-    // Update emoji based on theme
-    function updateToggleEmoji(theme) {
-        themeToggle.textContent = theme === 'dark' ? '🌞' : '🌙';
-    }
-});
+    themeToggle.addEventListener('click', currentThemeToggleListener);
+}
 
-document.body.addEventListener('htmx:afterSwap', () => {
-    const storedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', storedTheme);
-    updateToggleEmoji(storedTheme);
-});
-
-const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const initialTheme = localStorage.getItem('theme') || (systemPrefersDark ? 'dark' : 'light');
+// Use htmx:afterSettle instead of afterSwap
+document.addEventListener('DOMContentLoaded', initializeThemeToggle);
+document.body.addEventListener('htmx:afterSettle', initializeThemeToggle);

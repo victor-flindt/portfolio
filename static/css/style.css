@@ -25,10 +25,17 @@ body {
 .nav-container {
     background-color: var(--nav-bg);
     border-bottom: 1px solid var(--border-color);
-    padding: 1rem;
+    padding: 1rem ;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     gap: 1rem;
+}
+
+.nav-links-container {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0 auto; /* Centers the links container */
 }
 
 .nav-link {
@@ -58,11 +65,54 @@ body {
 }
 
 
-.theme-toggle button {
-    transition: transform 0.3s ease;
+/* Theme toggle slider */
+.theme-toggle {
+    margin-left: auto; /* Pushes toggle to far right */
+    padding-right: 1rem;
 }
 
-.theme-toggle button:hover {
-    transform: scale(1.1);
+.theme-slider {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-slider input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+.slider {
+    position: absolute;
     cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
 }
