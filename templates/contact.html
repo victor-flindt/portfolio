@@ -2,11 +2,12 @@
 
 {{define "content"}}
 <section class="contact">
-    <h2>Get in Touch</h2>
-    <form hx-post="/contact" hx-swap="outerHTML">
-        <input type="email" name="email" placeholder="Your email" required>
-        <textarea name="message" placeholder="Your message" required></textarea>
-        <button type="submit">Send</button>
-    </form>
+    <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p><strong>Email:</strong> your-email@example.com</p>
+        <p><strong>Phone:</strong> +123 456 7890</p>
+        <p><strong>Location:</strong> Your City, Country</p>
+        <p><strong>Social:</strong> <a href="https://twitter.com/yourhandle">Twitter</a> | <a href="https://linkedin.com/in/yourprofile">LinkedIn</a></p>
+    </div>
 </section>
 {{end}}
