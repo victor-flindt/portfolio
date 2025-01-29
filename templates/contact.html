@@ -1,0 +1,12 @@
+{{define "title"}}Contact{{end}}
+
+{{define "content"}}
+<section class="contact">
+    <h2>Get in Touch</h2>
+    <form hx-post="/contact" hx-swap="outerHTML">
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="Your message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+{{end}}

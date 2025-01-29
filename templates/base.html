@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}} - My Portfolio</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/" hx-get="/" hx-target="body" hx-push-url="true">Home</a>
+        <a href="/about" hx-get="/about" hx-target="body" hx-push-url="true">About</a>
+        <a href="/projects" hx-get="/projects" hx-target="body" hx-push-url="true">Projects</a>
+        <a href="/contact" hx-get="/contact" hx-target="body" hx-push-url="true">Contact</a>
+    </nav>
+    
+    <main>
+        {{template "content" .}}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{{define "title"}}Projects{{end}}
+
+{{define "content"}}
+<section class="projects">
+    <h2>My Projects</h2>
+    <div id="projects-list" hx-get="/api/projects" hx-trigger="load">
+        Loading projects...
+    </div>
+</section>
+{{end}}
