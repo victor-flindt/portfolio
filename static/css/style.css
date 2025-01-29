@@ -116,3 +116,13 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(26px);
 }
+
+/* front page image */
+.circle-image {
+    width: 300px;        /* Set the width of the image */
+    height: 300px;       /* Set the height of the image */
+    border-radius: 50%;  /* This makes it a circle */
+    object-fit: cover;   /* This ensures the image doesn't get stretched */
+    float: right;
+    margin-left: 20px;
+}

@@ -9,6 +9,7 @@ import (
 func main() {
 	// Handle static files
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	http.Handle("/content/", http.StripPrefix("/content/", http.FileServer(http.Dir("content"))))
 
 	// Define handlers
 	http.HandleFunc("/", makeHandler("home.html"))
