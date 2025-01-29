@@ -18,7 +18,7 @@ func main() {
 
 	// Start server
 	var PORT string = ":8080"
-	fmt.Println("Starting server at port")
+	fmt.Println("Starting server at port" + PORT)
 	http.ListenAndServe(PORT, nil)
 }
 
@@ -29,18 +29,16 @@ func makeHandler(tmpl string) http.HandlerFunc {
 			"templates/base.html",
 			"templates/"+tmpl,
 		)
-
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
 
-		// You can pass data to templates here
 		data := struct {
 			Title      string
 			ActivePage string
 		}{
-			Title:      tmpl[:len(tmpl)-5],
+			Title:      tmpl[:len(tmpl)-5], // Remove ".html" extension
 			ActivePage: tmpl[:len(tmpl)-5], // "home", "about", etc.
 		}
 
