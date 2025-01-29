@@ -1,0 +1,44 @@
+/* Basic reset and base styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation styling */
+.nav-container {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    background-color: #e9ecef;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.nav-link:hover {
+    background-color: #dee2e6;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-link:active {
+    transform: translateY(0);
+}
+
+/* Active page indicator */
+.nav-link[aria-current="page"] {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0a58ca;
+}

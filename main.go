@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
 )
@@ -16,7 +17,9 @@ func main() {
 	http.HandleFunc("/contact", makeHandler("contact.html"))
 
 	// Start server
-	http.ListenAndServe(":8080", nil)
+	var PORT string = ":8080"
+	fmt.Println("Starting server at port")
+	http.ListenAndServe(PORT, nil)
 }
 
 // Helper function to create handlers
@@ -34,9 +37,11 @@ func makeHandler(tmpl string) http.HandlerFunc {
 
 		// You can pass data to templates here
 		data := struct {
-			Title string
+			Title      string
+			ActivePage string
 		}{
-			Title: tmpl[:len(tmpl)-5], // Remove ".html" extension
+			Title:      tmpl[:len(tmpl)-5],
+			ActivePage: tmpl[:len(tmpl)-5], // "home", "about", etc.
 		}
 
 		t.Execute(w, data)
