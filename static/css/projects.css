@@ -1,0 +1,73 @@
+
+/* Projects section */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Flex grid layout for responsive cards */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Project card */
+.project-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensure content does not overflow */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.project-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhance shadow effect on hover */
+    transform: translateY(-5px); /* Lift the card on hover */
+}
+
+/* Image inside the project card */
+.project-card figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio of the image */
+    object-fit: cover; /* Ensure image fits nicely within the container */
+    border-bottom: 1px solid #eee;
+}
+
+/* Content inside the card */
+.project-card .project-body {
+    padding: 20px;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Link to view the project */
+.project-link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #2196F3;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    transition: color 0.2s ease;
+}
+
+.project-link:hover {
+    color: #0b7dda;
+    text-decoration: underline;
+}

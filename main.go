@@ -19,7 +19,8 @@ func main() {
 
 	// Start server
 	var PORT string = ":8080"
-	fmt.Println("Starting server at port" + PORT)
+	fmt.Println("URL: localhost" + PORT)
+
 	http.ListenAndServe(PORT, nil)
 }
 

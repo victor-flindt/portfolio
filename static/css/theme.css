@@ -1,0 +1,16 @@
+/* theme.css */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #f8f9fa;
+    --nav-bg: #2d2d2d;
+    --nav-link-bg: #3d3d3d;
+    --nav-link-hover: #4d4d4d;
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --nav-bg: #f8f9fa;
+    --nav-link-bg: #e9ecef;
+    --nav-link-hover: #3070af;
+}

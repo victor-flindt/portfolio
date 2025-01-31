@@ -2,7 +2,47 @@
 
 {{define "content"}}
 <section class="projects">
-    <h2>My Projects</h2>
-    <p>I'm a developer passionate about building great things</p>
+    <!-- Dactyl -->
+    <div class="project-card">
+        <figure>
+            <img src="../content/images/dactyl_cc.jpeg" alt="dactyl_cc Image" />
+        </figure>
+        <div class="project-body">
+            <h3>Hand build dactyl-cc keyboard</h3>
+            <p>Building and programming ergonomic dactyl-like keyboard. Parts STL + Blender file can be found on my Github</p>
+            <!-- target = _blank ensures link opens in new tab, rel thing is security -->
+            <a href="https://github.com/victor-flindt/dactyl-cc-viggo" class="project-link" target="_blank" rel="noopener noreferrer">Github</a>
+        </div>
+    </div>
+
+    <!-- Learning Python -->
+    <div class="project-card">
+        <figure>
+            <img src="../content/images/learning_python.webp" alt="learning_python Image" />
+        </figure>
+        <div class="project-body">
+            <h3>Learning Python !</h3>
+            <p>Free and open Python introduction course, aimed at high school students as their first steps into programming. Link to material can be found on my Github.</p>
+            <!-- target = _blank ensures link opens in new tab, rel thing is security -->
+            <a href="#" class="project-link">Read more</a>
+            <br>
+            <a href="https://github.com/victor-flindt/learning_python" class="project-link" target="_blank" rel="noopener noreferrer">Github</a>
+        </div>
+    </div>
+    <!-- Portfolio website -->
+    <div class="project-card">
+        <figure>
+            <img src="../content/images/webimage.avif" alt="learning_python Image" />
+        </figure>
+        <div class="project-body">
+            <h3>Portfolio website</h3>
+            <p>Portfolio website as a challenge for myself to learn more web stuff + golang yatta yatta open source find github</p>
+            <!-- target = _blank ensures link opens in new tab, rel thing is security -->
+            <a href="#" class="project-link">Read more</a>
+            <br>
+            <a href="https://github.com/victor-flindt/portfolio" class="project-link" target="_blank" rel="noopener noreferrer">Github</a>
+        </div>
+    </div>
+
 </section>
 {{end}}

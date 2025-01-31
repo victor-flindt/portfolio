@@ -1,0 +1,25 @@
+
+.home {
+    display: flex;
+    justify-content: space-between; /* Space out the left and right sides */
+    align-items: flex-start;  /* Vertically center the items */
+    height: 50vh;  /* Full viewport height */
+    width: 100%; /* Ensure the container takes up full width */
+}
+
+.left-side {
+    flex: 1;  /* Allows it to take up available space */
+    text-align: start;
+}
+
+.right-side {
+    padding-top: 10px;
+    text-align: center;  /* Center the image */
+}
+
+.circle-image {
+    width: 200px;  /* Set the image size */
+    height: 200px;  /* Keep it square */
+    border-radius: 50%;  /* Circular image */
+    object-fit: cover;  /* Ensure the image covers the area */
+}

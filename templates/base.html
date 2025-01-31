@@ -4,29 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{.Title}} - My Portfolio</title>
-    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
-    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="/static/css/global.css">
+    
+    <!-- Page-Specific Styles -->
+    {{if eq .ActivePage "home"}}
+        <link rel="stylesheet" href="/static/css/home.css">
+    {{end}}
+    
+    {{if eq .ActivePage "about"}}
+        <link rel="stylesheet" href="/static/css/about.css">
+    {{end}}
+    
+    {{if eq .ActivePage "projects"}}
+        <link rel="stylesheet" href="/static/css/projects.css">
+    {{end}}
+    
+    {{if eq .ActivePage "contact"}}
+        <link rel="stylesheet" href="/static/css/contact.css">
+    {{end}}
+
+    <!-- Common Theme Styles (e.g., Light/Dark mode) -->
+    <link rel="stylesheet" href="/static/css/theme.css">
 </head>
 <body>
     <!-- Dependencies -->
     <script src="/static/js/theme.js"></script>
+    
     <!-- Top menu navigation container -->
     <nav class="nav-container">
-
-
-            <a href="/" class="nav-link" 
-               {{if eq .ActivePage "home"}} aria-current="page"{{end}}
-               hx-get="/" hx-target="body" hx-push-url="true">Home</a>
-            <a href="/about" class="nav-link" 
-               {{if eq .ActivePage "about"}} aria-current="page"{{end}}
-               hx-get="/about" hx-target="body" hx-push-url="true">About</a>
-            <a href="/projects" class="nav-link" 
-               {{if eq .ActivePage "projects"}} aria-current="page"{{end}}
-               hx-get="/projects" hx-target="body" hx-push-url="true">Projects</a>
-            <a href="/contact" class="nav-link" 
-               {{if eq .ActivePage "contact"}} aria-current="page"{{end}}
-               hx-get="/contact" hx-target="body" hx-push-url="true">Contact</a>
-
+        <a href="/" class="nav-link" 
+           {{if eq .ActivePage "home"}} aria-current="page"{{end}}>Home</a>
+        <a href="/about" class="nav-link" 
+           {{if eq .ActivePage "about"}} aria-current="page"{{end}}>About</a>
+        <a href="/projects" class="nav-link" 
+           {{if eq .ActivePage "projects"}} aria-current="page"{{end}}>Projects</a>
+        <a href="/contact" class="nav-link" 
+           {{if eq .ActivePage "contact"}} aria-current="page"{{end}}>Contact</a>
         
         <div class="theme-toggle">
             <label class="theme-slider">
@@ -34,7 +49,6 @@
                 <span class="slider"></span>
             </label>
         </div>
-
     </nav>
     
     <main>
